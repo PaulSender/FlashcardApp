@@ -1,35 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/background"
     tools:context=".MainActivity">
 
 
     <TextView
         android:id="@+id/flashcar_question"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/flashcard_answer"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="92dp"
+        android:elevation="10dp"
+        android:background="@drawable/solid_color_shape"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="showAnswer"
         android:text="Who is the 44th President of the United States?"
         android:textAlignment="center"
+        android:textColor="#ffff"
         android:textSize="40sp"
-        android:onClick="showAnswer"
-        android:clickable="true"/>
+        />
+
 
     <TextView
         android:id="@+id/flashcard_answer"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="164dp"
+        android:background="@drawable/solid_color_shaperound"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="showQuestion"
         android:text="Barack Obama"
         android:textAlignment="center"
         android:textAllCaps="false"
+        android:textColor="#FFFF"
         android:textSize="40sp"
         android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/choice1"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#e8b3a2"
+        android:text="Bill Clinton"
+        android:textAlignment="center"
+        android:textColor="#dbf6f9"
+        android:textSize="30sp"
+        android:onClick="wrong"
+        android:clickable="true"
+        />
+
+    <TextView
+        android:id="@+id/choice2"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="169dp"
+        android:background="#e8b3a2"
+        android:text="George H. W. Bush"
+        android:textAlignment="center"
+        android:textColor="#dbf6f9"
+        android:textSize="30sp"
+        android:onClick="wrong"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/choice3"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="98dp"
+        android:background="#e8b3a2"
+        android:text="Barack Obama"
+        android:textAlignment="center"
+        android:textColor="#dbf6f9"
+        android:textSize="30sp"
+        android:onClick="correct"
+        android:clickable="true"/>
+
+
+    <ImageButton
+        android:id="@+id/Eye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/ic_iconmonstr_eye_7"
+        android:onClick="show"
+        android:clickable="true"
+        android:visibility="invisible"
+        android:background="@color/transparent"/>
+
+    <ImageButton
+        android:id="@+id/eye_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Eye"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_iconmonstr_eye_8"
+        android:onClick="hide"
+        android:clickable="true"
+        android:background="@color/transparent"
+        />
+
 </RelativeLayout>
