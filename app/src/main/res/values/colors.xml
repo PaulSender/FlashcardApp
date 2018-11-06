@@ -7,4 +7,5 @@
     <color name="green">#00cc00</color>
     <color name="questionColor">#e8b3a2</color>
     <color name="transparent">#00e8b3a2</color>
+    <color name="text_color">#455358</color>
 </resources>

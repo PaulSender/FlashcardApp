@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,67 +10,71 @@
 
     <TextView
         android:id="@+id/flashcar_question"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/flashcard_answer"
-        android:layout_centerHorizontal="true"
-        android:elevation="10dp"
-        android:background="@drawable/solid_color_shape"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="41dp"
+        android:autoSizeMaxTextSize="40sp"
+        android:autoSizeTextType="uniform"
         android:clickable="true"
         android:gravity="center"
+        android:lineSpacingExtra="0sp"
         android:onClick="showAnswer"
-        android:text="Who is the 44th President of the United States?"
+        android:text="Edit questions with the edit button and add questions with the add button"
         android:textAlignment="center"
-        android:textColor="#ffff"
-        android:textSize="40sp"
-        />
-
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/text_color"
+        android:textSize="0sp" />
 
     <TextView
         android:id="@+id/flashcard_answer"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/solid_color_shaperound"
+        android:layout_alignTop="@+id/flashcar_question"
+        android:autoSizeMaxTextSize="40sp"
+        android:autoSizeTextType="uniform"
         android:clickable="true"
         android:gravity="center"
         android:onClick="showQuestion"
-        android:text="Barack Obama"
+        android:text="Edit answers with edit Button and add answers with add button"
         android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#FFFF"
-        android:textSize="40sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/text_color"
+        android:textSize="0sp"
         android:visibility="invisible" />
 
     <TextView
         android:id="@+id/choice1"
-        android:layout_width="329dp"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="#e8b3a2"
-        android:text="Bill Clinton"
-        android:textAlignment="center"
-        android:textColor="#dbf6f9"
-        android:textSize="30sp"
-        android:onClick="wrong"
-        android:clickable="true"
-        />
-
-    <TextView
-        android:id="@+id/choice2"
-        android:layout_width="329dp"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="169dp"
-        android:background="#e8b3a2"
-        android:text="George H. W. Bush"
-        android:textAlignment="center"
-        android:textColor="#dbf6f9"
-        android:textSize="30sp"
+        android:layout_marginBottom="200dp"
+
+        android:clickable="true"
         android:onClick="wrong"
-        android:clickable="true"/>
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="30sp"
+         />
+
+    <TextView
+        android:id="@+id/choice2"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="250dp"
+        android:clickable="true"
+        android:onClick="wrong"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="30sp"
+         />
 
     <TextView
         android:id="@+id/choice3"
@@ -77,39 +82,83 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="98dp"
-        android:background="#e8b3a2"
-        android:text="Barack Obama"
-        android:textAlignment="center"
-        android:textColor="#dbf6f9"
-        android:textSize="30sp"
+        android:layout_marginBottom="150dp"
+
+        android:clickable="true"
         android:onClick="correct"
-        android:clickable="true"/>
+        android:text=" "
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="30sp"
+         />
 
 
     <ImageButton
         android:id="@+id/Eye"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+
+        android:layout_alignTop="@+id/eye_close"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/ic_iconmonstr_eye_7"
-        android:onClick="show"
+        android:background="@color/transparent"
         android:clickable="true"
-        android:visibility="invisible"
-        android:background="@color/transparent"/>
+        android:onClick="show"
+        android:src="@drawable/ic_iconmonstr_eye_7"
+        android:visibility="invisible" />
 
     <ImageButton
         android:id="@+id/eye_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/Eye"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_iconmonstr_eye_8"
-        android:onClick="hide"
-        android:clickable="true"
+        android:layout_marginBottom="15dp"
         android:background="@color/transparent"
-        />
+        android:clickable="true"
+        android:onClick="hide"
+        android:src="@drawable/ic_iconmonstr_eye_8"
+        android:visibility="invisible" />
+-->
+
+    <ImageButton
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/edit"
+        android:layout_marginEnd="105dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_iconmonstr_plus_thin" />
+
+    <TextView
+        android:id="@+id/add_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/add"
+        android:layout_marginEnd="118dp"
+        android:text="Add" />
+
+    <ImageButton
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/choice3"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="-99dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_iconmonstr_edit_2" />
+
+    <TextView
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/edit"
+        android:layout_marginStart="118dp"
+        android:text="Edit" />
+
 
 </RelativeLayout>

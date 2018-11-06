@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/background"
+    tools:context=".AddCardActivity">
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/add_answer"
+        android:layout_marginTop="16dp"
+        android:text="Question:" />
+
+    <EditText
+        android:id="@+id/add_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/answerText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Add Answer here"
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:maxLength="2000"
+        android:maxLines="4"
+        android:scrollHorizontally="false"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="102dp" />
+
+    <EditText
+        android:id="@+id/add_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/questionText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Add question here"
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:maxLength="2000"
+        android:maxLines="4"
+        android:scrollHorizontally="false"
+        android:singleLine="false"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="209dp" />
+
+    <ImageButton
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/add_question"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_iconmonstr_x_mark_thin"
+        tools:layout_editor_absoluteX="312dp"
+        tools:layout_editor_absoluteY="519dp" />
+
+    <ImageButton
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBottom="@+id/optionOne"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_iconmonstr_checkbox_checked_extended_thin" />
+
+    <TextView
+        android:id="@+id/answerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/questionText"
+        android:layout_below="@+id/add_question"
+        android:text="Answer:" />
+
+    <EditText
+        android:id="@+id/optionOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="Option2"
+        android:inputType="textMultiLine"
+        android:lines="4" />
+
+    <EditText
+        android:id="@+id/optionTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/OptionsTwoText"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Option 1"
+        android:inputType="textMultiLine"
+        android:lines="4" />
+
+    <TextView
+        android:id="@+id/OptionOneText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/optionTwo"
+        android:layout_alignStart="@+id/add_answer"
+        android:text="Wrong Choice 1: " />
+
+    <TextView
+        android:id="@+id/OptionsTwoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/optionOne"
+        android:layout_alignStart="@+id/add_answer"
+        android:text="Wrong Choice 2: " />
+
+
+</RelativeLayout>
