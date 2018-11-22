@@ -11,16 +11,68 @@ import android.view.View;
 
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+
+
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    FlashcardDatabase flashcardDatabase;
+    List<Flashcard> allFlashcards;
+   int currentCardDisplayedIndex = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        flashcardDatabase= new FlashcardDatabase(getApplicationContext());
+        allFlashcards = flashcardDatabase.getAllCards();
+
+        if (allFlashcards != null && allFlashcards.size() > 0) {
+            ((TextView) findViewById(R.id.flashcar_question)).setText(allFlashcards.get(0).getQuestion());
+            ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(0).getAnswer());
+        }
+
+        /*
+        Delete Button
+         */
+        findViewById(R.id.delete).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flashcardDatabase.deleteCard(((TextView) findViewById(R.id.flashcar_question)).getText().toString());
+                allFlashcards.remove(allFlashcards.get(currentCardDisplayedIndex));
+                currentCardDisplayedIndex--;
+
+                if (allFlashcards != null && allFlashcards.size() > 0) {
+                    ((TextView) findViewById(R.id.flashcar_question)).setText(allFlashcards.get(currentCardDisplayedIndex).getQuestion());
+                    ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(currentCardDisplayedIndex).getAnswer());
+                }
+                else {
+                    ((TextView) findViewById(R.id.flashcar_question)).setText("Add a card");
+                    ((TextView) findViewById(R.id.flashcard_answer)).setText("Add a card with an answer");
+                }
+
+            }
+        });
+
+        /*
+        Next Button
+         */
+
+        findViewById(R.id.next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentCardDisplayedIndex++;
+
+                if (currentCardDisplayedIndex > allFlashcards.size() - 1) {
+                    currentCardDisplayedIndex = 0;
+                }
+                ((TextView) findViewById(R.id.flashcar_question)).setText(allFlashcards.get(currentCardDisplayedIndex).getQuestion());
+                ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(currentCardDisplayedIndex).getAnswer());
+            }
+        });
+
         /*
         Add card button
          */
@@ -233,6 +285,9 @@ public class MainActivity extends AppCompatActivity {
                         "Card Successfully Created",
                         Snackbar.LENGTH_SHORT)
                         .show();
+
+                flashcardDatabase.insertCard(new Flashcard(string1, string2));
+                allFlashcards = flashcardDatabase.getAllCards();
             }
         }
 
