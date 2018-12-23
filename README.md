@@ -7,7 +7,7 @@ Application now has animaitons to draw user in as well as aid in the understandi
 
 ### App Walk-though
 
-<img src="https://media.giphy.com/media/1AIwPTi2ZVngIMUsog/giphy.gif" width=200><br>
+<img src="https://media.giphy.com/media/SJGJFDgXROrNtGnZaN/giphy.gif" width=200><br>
 
 
 
@@ -17,10 +17,19 @@ Application now has animaitons to draw user in as well as aid in the understandi
 - [x] User sees flashcards animating in / out when the 'next' button is tapped
 
 ## Optional
-- [ ] Extra styling is added!
+- [X] Extra styling is added!
 - [ ] User sees a countdown timer for each question
 - [ ] User sees a 'card flip' animation when the card is tapped
 - [ ] User sees a celebration animation with confetti when they answer a question correctly
+
+   ### Needs fixing
+     - Deleting top of stack crashes App due to reference to a -1 index
+     - Adding on the emulator doesn't update the Database
+     - Animations needs a Libarary to look smoother
+   ### Future Features
+      - Current card info (and other Info) at top of MainActivity
+      - Button to create "new" stack (essentially deletes all the cards and brings you to the add screen) 
+      - Stack state saving to allow for multiple seperate stacks of cards
 
 ## Lab 3
 
