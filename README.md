@@ -1,5 +1,56 @@
 ## Flashcard_App
 
+## Lab 4
+
+### App Description
+Application now has animaitons to draw user in as well as aid in the understanding of app functions. Animations were added to the "add" button, the "next" button, and when the "question" is clicked - the answer is reviled with a circular animation. 
+
+### App Walk-though
+
+<img src="https://media.giphy.com/media/SJGJFDgXROrNtGnZaN/giphy.gif" width=200><br>
+
+
+
+## Required
+- [x] User sees a transition animation when going from the main screen to the add card screen.
+- [x] User sees a reveal animation when the flashcard is tapped and the answer is shown
+- [x] User sees flashcards animating in / out when the 'next' button is tapped
+
+## Optional
+- [X] Extra styling is added!
+- [ ] User sees a countdown timer for each question
+- [ ] User sees a 'card flip' animation when the card is tapped
+- [ ] User sees a celebration animation with confetti when they answer a question correctly
+
+   ### Needs fixing
+     - Deleting top of stack crashes App due to reference to a -1 index
+     - Adding on the emulator doesn't update the Database
+     - Animations needs a Libarary to look smoother
+   ### Future Features
+      - Current card info (and other Info) at top of MainActivity
+      - Button to create "new" stack (essentially deletes all the cards and brings you to the add screen) 
+      - Stack state saving to allow for multiple seperate stacks of cards
+
+## Lab 3
+
+### App Description
+Allows the user to save cards to a locally hosted database. The user can also cycle through cards in the stack and delete them. Addional functionality like editing database cards and adding multiple choice answers to the database will come in a later version. 
+
+### App Walk-though
+
+<img src="https://media.giphy.com/media/xUmO1qiCjRH7miXRXh/giphy.gif" width=200><br>
+
+
+## Required
+- [x] User can create a card and still see their created card when the app is relaunched.
+- [x] User can create muliple cards and browse through all created cards
+
+## Optional
+- [x] User can delete a card and no longer see it in their deck anymore
+- [ ] Flashcards are shown in random order instead of the order they were created in
+- [ ] User can edit a card and see the edit saved when they browse through their deck of cards
+- [ ] User can create flashcards with multiple answers and be able to browse through cards with multiple choice answers shown
+
 ## Lab 2
 
 ### App Description
