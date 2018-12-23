@@ -6,44 +6,49 @@
     android:layout_height="match_parent"
     android:id="@+id/background"
     tools:context=".MainActivity">
-
-
+<!---
+    TextViews - In use first, commented out after all in use.
+-->
     <TextView
-        android:id="@+id/flashcar_question"
+        android:id="@+id/flashcard_question"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="296dp"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/flashcard_answer"
-        android:autoSizeMaxTextSize="40sp"
-        android:autoSizeTextType="uniform"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="23dp"
+
         android:clickable="true"
+        android:focusable="true"
         android:gravity="center"
-        android:lineSpacingExtra="0sp"
         android:onClick="showAnswer"
-        android:text="Edit questions with the edit button and add questions with the add button"
+        android:text="@string/initial_setup"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="@color/text_color"
-        android:textSize="0sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/flashcard_answer"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:autoSizeMaxTextSize="40sp"
-        android:autoSizeTextType="uniform"
+        android:layout_height="294dp"
+        android:layout_alignTop="@+id/flashcard_question"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="25dp"
         android:clickable="true"
+        android:focusable="true"
         android:gravity="center"
         android:onClick="showQuestion"
-        android:text="Edit answers with edit Button and add answers with add button"
+        android:text="@string/initial_setup"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="@color/text_color"
-        android:textSize="0sp"
+
+        android:textSize="24sp"
         android:visibility="invisible" />
 
+
+<!-- Commented out (Mainly Multiple Choice Options
     <TextView
         android:id="@+id/choice1"
         android:layout_width="330dp"
@@ -88,8 +93,119 @@
         android:textColor="@color/text_color"
         android:textSize="30sp" />
 
+-->
+
+
+    <!-- Image Buttons -->
 
     <ImageButton
+        android:id="@+id/add"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_above="@+id/add_text"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_circleplus" />
+
+
+    <ImageButton
+        android:id="@+id/next"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_alignEnd="@+id/flashcard_question"
+        android:layout_alignTop="@+id/add"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_circlearrow"
+        android:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="58dp"
+        android:layout_height="59dp"
+        android:layout_alignStart="@+id/flashcard_question"
+        android:layout_alignTop="@+id/add"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_circledelete"
+        android:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/edit"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_above="@+id/edit_text"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_circleedit"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/delete_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/flashcard_question"
+        android:layout_below="@+id/add"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Delete"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/next_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/next"
+        android:layout_below="@+id/add"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="NEXT"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="23sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/add_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Add"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Edit"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/Outline"
+        android:background="@drawable/solid_color_shape"
+        android:layout_width="306dp"
+        android:layout_height="292dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="27dp"
+        android:layout_marginTop="24dp"
+        android:visibility="visible" />
+
+
+    <!-- Image Buttons for showing/hiding multiple choice -->
+
+    <!--
+
+     <ImageButton
         android:id="@+id/Eye"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -114,67 +230,8 @@
         android:onClick="hide"
         android:src="@drawable/ic_iconmonstr_eye_8"
         android:visibility="invisible" />
--->
 
-    <ImageButton
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/edit"
-        android:layout_marginEnd="105dp"
-        android:background="@color/transparent"
-        android:src="@drawable/ic_iconmonstr_plus_thin" />
-
-    <TextView
-        android:id="@+id/add_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/add"
-        android:layout_marginEnd="118dp"
-        android:text="Add" />
-
-    <ImageButton
-        android:id="@+id/edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/choice3"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="-99dp"
-        android:background="@color/transparent"
-        android:src="@drawable/ic_iconmonstr_edit_2" />
-
-    <TextView
-        android:id="@+id/edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/edit"
-        android:layout_marginStart="118dp"
-        android:text="Edit" />
-
-    <ImageButton
-        android:id="@+id/next"
-        android:layout_width="45dp"
-        android:layout_height="33dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="-118dp"
-        android:layout_marginTop="213dp"
-        android:layout_toStartOf="@+id/edit_text"
-        android:background="@color/transparent"
-        android:src="@drawable/ic_iconmonstr_arrow_8" />
-
-    <ImageButton
-        android:id="@+id/delete"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_alignStart="@+id/add"
-        android:layout_alignTop="@+id/next"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_iconmonstr_x_mark_thin" />
+        -->
 
 
 </RelativeLayout>
