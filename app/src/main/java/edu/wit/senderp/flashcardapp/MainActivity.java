@@ -11,12 +11,16 @@ import android.view.View;
 
 import android.view.ViewAnimationUtils;
 import android.view.Window;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 
 import java.util.List;
+
+import at.wirecube.additiveanimations.additive_animator.AdditiveAnimation;
+import at.wirecube.additiveanimations.additive_animator.AdditiveAnimator;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -302,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     View answerSideView = findViewById(R.id.flashcard_answer);
                     //get center for the clipping circle
-                    int cx = answerSideView.getWidth() / 2;
+                 /*    int cx = answerSideView.getWidth() / 2;
                     int cy = answerSideView.getHeight() / 2;
 
                     //get final radius for the clipping circle
@@ -311,12 +315,18 @@ public class MainActivity extends AppCompatActivity {
                     // create the animator for this view (the start radius is zero)
                     Animator anim = ViewAnimationUtils.createCircularReveal(answerSideView, cx, cy, 0f, finalRadius);
 
+
                     //hide the question and show the answer to prepare for playing the animaiton!
                     findViewById(R.id.flashcard_question).setVisibility(View.INVISIBLE);
                     answerSideView.setVisibility(View.VISIBLE);
 
                     anim.setDuration(1000);
                     anim.start();
+
+                    */
+                 //findViewById(R.id.reveal_icon).setVisibility(View.VISIBLE);
+                 Animation fadeOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out);
+                // findViewById(R.id.reveal_icon).startAnimation(fadeOut);
                 }
             });
         }

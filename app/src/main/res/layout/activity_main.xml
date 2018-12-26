@@ -191,14 +191,24 @@
 
     <TextView
         android:id="@+id/Outline"
-        android:background="@drawable/solid_color_shape"
         android:layout_width="306dp"
         android:layout_height="292dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginTop="24dp"
+        android:layout_alignTop="@+id/flashcard_question"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/solid_color_shape"
         android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/reveal_icon"
+        android:layout_width="99dp"
+        android:layout_height="92dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/solid_color_shaperound"
+
+        android:visibility="invisible"
+        />
 
 
     <!-- Image Buttons for showing/hiding multiple choice -->
