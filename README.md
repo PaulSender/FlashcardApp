@@ -23,9 +23,9 @@ Application now has animaitons to draw user in as well as aid in the understandi
 - [ ] User sees a celebration animation with confetti when they answer a question correctly
 
    ### Needs fixing
-     - Deleting top of stack crashes App due to reference to a -1 index
+     X Deleting top of stack crashes App due to reference to a -1 index
      - Adding on the emulator doesn't update the Database
-     - Animations needs a Libarary to look smoother
+     - Animations needs a Lib to look smoother
    ### Future Features
       - Current card info (and other Info) at top of MainActivity
       - Button to create "new" stack (essentially deletes all the cards and brings you to the add screen) 
